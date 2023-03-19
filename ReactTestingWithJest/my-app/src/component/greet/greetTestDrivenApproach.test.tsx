@@ -13,3 +13,5 @@ test("Greet Render Correctly", () => {
     const textElement = screen.getByText("Hello Wardha");
     expect(textElement).toBeInTheDocument();
 })
+
+//test.only or test.skip these two are use for Filtering the test
