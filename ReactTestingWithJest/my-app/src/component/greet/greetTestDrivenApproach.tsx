@@ -1,9 +1,6 @@
 import React from 'react'
-
-type GreettestDrivenApproach={
-    name?:string
-}
-export default function GreettestDrivenApproach(props : GreettestDrivenApproach) {
+import { GreettestDriven } from './greetTestDrivenApproach.types';
+export default function GreettestDrivenApproach(props: GreettestDriven) {
   return (
     <div>Hello {props.name}</div>
   )

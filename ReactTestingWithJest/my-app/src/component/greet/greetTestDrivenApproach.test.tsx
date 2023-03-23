@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import GreettestDrivenApproach from './greetTestDrivenApproach';
-
+import React from 'react'
 //we can grouping thte test
 describe(GreettestDrivenApproach, () => {
     test("Greet Render Correctly", () => {
