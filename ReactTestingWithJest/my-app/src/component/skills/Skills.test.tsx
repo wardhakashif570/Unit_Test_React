@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, logRoles } from '@testing-library/react'
 import { Skills } from './Skills'
 
 describe('Skills', () => {
@@ -29,17 +29,22 @@ describe('Skills', () => {
     expect(startLearningButton).not.toBeInTheDocument()
   }),
 
-  test('Start Learning button is eventually displayed', async () => {
-    render(<Skills skills={skills} />)
-    const startLearningButton = await screen.findByRole(
-      'button',
-      {
-        name: 'Start learning',
-      },
-      {
-        timeout: 2000,
-      }
-    )
-    expect(startLearningButton).toBeInTheDocument()
-  })
+    test('Start Learning button is eventually displayed', async () => {
+
+      const view = render(<Skills skills={skills} />)
+      logRoles(view.container)
+      // render(<Skills skills={skills} />)
+      const startLearningButton = await screen.findByRole(
+        'button',
+        {
+          name: 'Start learning',
+        },
+        {
+          timeout: 2000,
+        }
+      )
+      expect(startLearningButton).toBeInTheDocument()
+    })
+
+  //screen.debug()   to debug the Dom 
 })
